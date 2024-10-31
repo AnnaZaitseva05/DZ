@@ -14,9 +14,10 @@ print_params(c = [1,2,3])
 values_list = [1, 'строка', True]
 values_dict = {'a':1, 'b':'строка', 'c':True}
 
-def print_params(*args, **kwargs):
-    print(args)
-    print(kwargs)
+def print_params(*args, **kwargs): # исправила код для раскрытия скобок в списке и словаре
+    print(*args)
+        for key, value in kwargs.items():
+        print(f"{key}={value}")
 
 print_params(*values_list, **values_dict)
 

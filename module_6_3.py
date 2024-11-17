@@ -1,55 +1,3 @@
-# class Vehicle:
-#     __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
-#
-#     def __init__(self, owner, model, color, engine_power):
-#         self.owner = str(owner)
-#         self.__model = str(model)
-#         self.__color = str(color)
-#         self.__engine_power = int(engine_power)
-#
-#     def get_model(self):
-#         return f"Модель: {self.__model}"
-#
-#     def get_horsepower(self):
-#         return f"Мощность двигателя: {self.__engine_power}"
-#
-#     def get_color(self):
-#         return f"Цвет: {self.__color}"
-#
-#     def print_info(self):
-#         print(self.get_model())
-#         print(self.get_horsepower())
-#         print(self.get_color())
-#         print(f"Владелец: {self.owner}")
-#
-#     def set_color(self, new_color):
-#         if new_color.lower() in Vehicle.__COLOR_VARIANTS:
-#             self.__color = new_color
-#         else:
-#             print(f'Нельзя сменить цвет на {new_color}')
-#
-#
-#
-# class Sedan (Vehicle):
-#     __PASSENGERS_LIMIT = 5
-#
-#
-# vehicle1 = Sedan('Fedos', 'Toyota Mark II', 'blue', 500)
-#
-# # Изначальные свойства
-#
-# vehicle1.print_info()
-#
-# # Меняем свойства (в т.ч. вызывая методы)
-#
-# vehicle1.set_color('Pink')
-# vehicle1.set_color('BLACK')
-# vehicle1.owner = 'Vasyok'
-#
-# # Проверяем что поменялось
-#
-# vehicle1.print_info()
-
 import random
 
 class Animal:
@@ -63,7 +11,7 @@ class Animal:
 
     def move(self, dx, dy, dz):
         if self._cords[2] + dz * self.speed < 0:
-            print("It's too deep, I can't dive :(")
+            print("It's too deep, i can't dive :(")
         else:
             self._cords[0] += dx * self.speed
             self._cords[1] += dy * self.speed
@@ -74,9 +22,9 @@ class Animal:
 
     def attack(self):
         if self._DEGREE_OF_DANGER < 5:
-            print("Sorry, I'm peaceful :)")
+            print("Sorry, i'm peaceful :)")
         else:
-            print("Be careful, I'm attacking you 0_0")
+            print("Be careful, i'm attacking you 0_0")
 
     def speak(self):
         if self.sound:
@@ -104,14 +52,13 @@ class Duckbill(Bird, PoisonousAnimal, AquaticAnimal):
     def __init__(self, speed):
         super().__init__(speed)
 
-# Создаем экземпляр Duckbill с заданной скоростью
 db = Duckbill(10)
 
 print(db.live)
 print(db.beak)
 
 db.speak()
-db.attack()  # Теперь здесь будет вывод "Be careful, I'm attacking you 0_0"
+db.attack()
 
 db.move(1, 2, 3)
 db.get_cords()

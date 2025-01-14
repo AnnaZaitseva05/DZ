@@ -1,0 +1,28 @@
+import inspect
+
+def introspection_info(obj):
+    # Получение типа объекта
+    obj_type = type(obj)
+
+    # Получение атрибутов объекта
+    obj_attributes = dir(obj)
+
+    # Получение методов объекта
+    obj_methods = [method for method in dir(obj) if callable(getattr(obj, method))]
+
+    # Получение модуля объекта
+    obj_module = obj.__mod__
+
+    # Создание словаря с информацией об объекте
+    info = {
+        'Тип объекта': str(obj_type),
+        'Атрибуты': obj_attributes,
+        'Методы': obj_methods,
+        'Модуль': obj_module,
+    }
+
+    return info
+
+# Пример работы функции
+number_info = introspection_info(42)
+print(number_info)

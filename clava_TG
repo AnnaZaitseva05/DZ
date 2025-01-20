@@ -5,11 +5,11 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 import asyncio
 
-api = "6031148054:AAE4iRHG_pq7ESOifNRACzCd4UFT3y2e5j0"
+api = ""
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
-kb = ReplyKeyboardMarkup()
+kb = ReplyKeyboardMarkup(resize_keyboard=True)
 button = KeyboardButton(text='Расcчитать')
 button2 = KeyboardButton(text='Информация')
 kb.add(button)
